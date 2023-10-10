@@ -12,7 +12,7 @@ RUN tar -xvf v1.2.0.tar.gz
 
 RUN mkdir  $HOME/.vnc
 
-RUN echo 'Sophia' | vncpasswd -f > $HOME/.vnc/passwd
+RUN echo 'qiushui' | vncpasswd -f > $HOME/.vnc/passwd
 
 RUN echo '/bin/env  MOZ_FAKE_NO_SANDBOX=1  dbus-launch xfce4-session'  > $HOME/.vnc/xstartup
 
@@ -20,18 +20,18 @@ RUN chmod 600 $HOME/.vnc/passwd
 
 RUN chmod 755 $HOME/.vnc/xstartup
 
-RUN echo 'whoami ' >>/Sophia.sh
+RUN echo 'whoami ' >>/qiushui.sh
 
-RUN echo 'cd ' >>/Sophia.sh
+RUN echo 'cd ' >>/qiushui.sh
 
-RUN echo "su -l -c 'vncserver :2000 -geometry 1360x768' "  >>/Sophia.sh
+RUN echo "su -l -c 'vncserver :2000 -geometry 1360x768' "  >>/qiushui.sh
 
-RUN echo 'cd /noVNC-1.2.0' >>/Sophia.sh
+RUN echo 'cd /noVNC-1.2.0' >>/qiushui.sh
 
-RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8900 ' >>/Sophia.sh
+RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8900 ' >>/qiushui.sh
 
-RUN chmod 755 /Sophia.sh
+RUN chmod 755 /qiushui.sh
 
 EXPOSE 8900
 
-CMD  /Sophia.sh
+CMD  /qiushui.sh
